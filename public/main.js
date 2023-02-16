@@ -6,15 +6,16 @@ const filterDiameter = document.querySelector('#filterDiameter');
 let baseURL = 'http://localhost:4000/api/planets'
 
 const planetCallback = ({ data: planets }) => displayPlanets(planets)
-const errCallback = err => {console.log(err)}
+const errCallback = err => console.log(err)
 
 const getPlanets = () => axios.get(baseURL).then(planetCallback).catch(errCallback);
-
-
-
+const filterBySize = (value, type) => axios.get(`${baseURL}/?size=${value}`, {type}).then(planetCallback).catch(errCallback);
+const filterByDiameter = (value, type) => axios.get(`${baseURL}/?diameter=${value}`, {type}).then(planetCallback).catch(errCallback);
+const deletePlanet = (id) => axios.delete(`${baseURL}/:${id}`).then(planetCallback).catch(errCallback);
+const createPlanet = (body) => axios.post(baseURL, body).then(planetCallback).catch(errCallback);
 
 const displayPlanets = arr => {
-    dogsContainer.innerHTML = "";
+    planetsContainer.innerHTML = "";
     for(let i = 0; i < arr.length; i++) {
         createPlanetCard(arr[i]);
     }
@@ -37,22 +38,17 @@ const createPlanetCard = planet => {
 const newPlanetHandler = event => {
 
 }
-
-const filterByMass = event => {
+const massHandler = event => {
+    let moreMass = document.querySelector('#moreMass');
+    let lessMass = document.querySelector('#lessMass');
+    let filter = document.querySelector('#massFilter');
+}
+const diameterHandler = event => {
 
 }
-
-const filterByDiameter = event => {
-
-}
-
-const deletePlanet = planetObj => {
-
-}
-
 
 newPlanet.addEventListener('submit', newPlanetHandler);
-filterMass.addEventListener('submit', filterByMass);
-filterDiameter.addEventListener('submit', filterByDiameter);
+filterMass.addEventListener('submit', massHandler);
+filterDiameter.addEventListener('submit', diameterHandler);
 
 getPlanets();
