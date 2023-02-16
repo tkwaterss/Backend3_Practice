@@ -1,8 +1,37 @@
 [
     {
-
+        "id": 1,
+        "name": "Earth",
+        "color": "Blue",
+        "mass(10^24kg)": 5.97,
+        "diameter(km)": 12756
     },
     {
-        
+        "id": 1,
+        "name": "Mars",
+        "color": "Red",
+        "mass(10^24kg)": 0.642,
+        "diameter(km)": 6792
+    },
+    {
+        "id": 1,
+        "name": "Uranus",
+        "color": "Blue-Green",
+        "mass(10^24kg)": 86.8,
+        "diameter(km)": 51118
+    },
+    {
+        "id": 1,
+        "name": "Saturn",
+        "color": "Yellow-Brown",
+        "mass(10^24kg)": 568,
+        "diameter(km)": 120536
+    },
+    {
+        "id": 1,
+        "name": "Neptune",
+        "color": "Blue",
+        "mass(10^24kg)": 102,
+        "diameter(km)": 49528
     }
 ]

@@ -5,10 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Practice</title>
 </head>
 <body>
+    <header>
+        <h2>Planets</h2>
+    </header>
+
+        <form class="inputs" id="newPlanetForm">
+            <label class="textInput" for="name">Planet: <input type="text" id="name" name="name"></label>
+            <label class="textInput" for="color">Color: <input type="text" id="color" name="color"> </label>
+            <label class="textInput" for="mass">Mass(10^24kg): <input type="text" id="mass" name="mass"> </label>
+            <label class="textInput" for="diameter">Diameter(km): <input type="text" id="diameter" name="diameter"> </label>
+            <input type="submit">
+        </form>
+        <form class="inputs" id="filterMass">
+            <label class="textInput" for="moreMass">Greater Than:</label><input type="radio" id="moreMass" name="moreMass" value="more"></label>
+            <label class="textInput" for="lessMass">Less Than:<input type="radio" id="lessMass" name="lessMass" value="less"></label>
+            <label class="textInput" for="massFilter">Mass Value:<input type="text" id="massFilter" name="massFilter"></label>
+            <input type="submit">
+        </form>
+        <form class="inputs" id="filterDiameter">
+            <label class="textInput" for="moreDiameter">Greater Than:<input type="radio" id="moreDiameter" name="moreDiameter" value="more"></label>
+            <label class="textInput" for="lessDiameter">Less Than:<input type="radio" id="lessDiameter" name="lessDiameter" value="less"></label>
+            <label class="textInput" for="diameterFilter">Diameter Value:<input type="text" id="diameterFilter" name="diameterFilter"></label>
+            <input type="submit">
+        </form>
     
+    <main id="planets-container"></main>
+
 
     <script src="main.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
