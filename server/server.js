@@ -7,10 +7,14 @@ app.use(express.json());
 app.use(cors());
 
 const {
-    functionName,
+    getPlanets,
+    filterBySize,
+    filterByDiameter,
+    createPlanet,
+    ExplodePlanet
 } = require('./controller')
 
-app.get('url',functionName);
+app.get('/api/planets',getPlanets);
 
 
 
@@ -18,4 +22,4 @@ app.get('url',functionName);
 
 
 
-app.filter(4000,console.log("Server running on 4000"));
+app.listen(4000,console.log("Server running on 4000"));

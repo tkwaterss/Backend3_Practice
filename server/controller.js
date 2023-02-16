@@ -1,8 +1,8 @@
-let dataObject = require('.db.json');
+let planetData = require('./db.json');
 
 
 module.exports = {
-    functionName: (req,res) => {
-
+    getPlanets: (req,res) => {
+        res.status(200).send(planetData);
     }
 }
